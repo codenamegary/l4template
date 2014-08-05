@@ -1,0 +1,8 @@
+{
+  "name": "l4template",
+  "version": "0.0.1",
+  "dependencies": {
+    "bootstrap": "3.1.1",
+    "fontawesome": "4.1.0"
+  }
+}
