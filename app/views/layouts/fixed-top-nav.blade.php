@@ -1,7 +1,7 @@
 @extends('layouts.blank')
 @section('body-tag')
-<body style="padding-top:60px;">
+<body style="padding-top:52px;">
 @stop
-@section('top')
+@section('nav')
 @include('nav.nav')
 @stop

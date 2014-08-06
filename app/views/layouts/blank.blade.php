@@ -24,6 +24,7 @@
 
 </head>
 @yield('body-tag')
+@yield('nav')
 @yield('top')
 @yield('content')
 @yield('footer')

@@ -1,5 +1,4 @@
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-      <div class="container">
+    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="sr-only">{{ trans('nav.toggle') }}</span>
@@ -16,5 +15,4 @@
             @include('nav.guest')
           @endif
         </div><!--/.nav-collapse -->
-      </div>
     </nav>
