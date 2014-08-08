@@ -115,13 +115,13 @@ return array(
 		'cluster' => false,
 
 		'cache' => array(
-			'host'     => '127.0.0.1',
+			'host'     => 'tunnel.pagodabox.com',
 			'port'     => 6379,
 			'database' => 0,
 		),
 		
         'sessions' => array(
-            'host'     => '127.0.0.1',
+            'host'     => 'tunnel.pagodabox.com',
             'port'     => 6379,
             'database' => 1,
         ),
