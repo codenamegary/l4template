@@ -16,7 +16,7 @@ return array(
 	|
 	*/
 
-	'driver' => 'file',
+	'driver' => 'redis',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -29,7 +29,7 @@ return array(
 	|
 	*/
 
-	'lifetime' => 120,
+	'lifetime' => 3600,
 
 	'expire_on_close' => false,
 
@@ -57,7 +57,7 @@ return array(
 	|
 	*/
 
-	'connection' => null,
+	'connection' => 'sessions',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -96,7 +96,7 @@ return array(
 	|
 	*/
 
-	'cookie' => 'laravel_session',
+	'cookie' => 'lsess',
 
 	/*
 	|--------------------------------------------------------------------------

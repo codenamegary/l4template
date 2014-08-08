@@ -53,11 +53,12 @@ return array(
 		),
 
 		'mysql' => array(
-			'driver'    => 'mysql',
-			'host'      => 'localhost',
-			'database'  => 'forge',
-			'username'  => 'forge',
-			'password'  => '',
+            'driver'    => 'mysql',
+            'host'     => isset( $_SERVER["DB1_HOST"] ) ? $_SERVER["DB1_HOST"] : '',
+            'database' => isset( $_SERVER["DB1_NAME"] ) ? $_SERVER["DB1_NAME"] : '',
+            'username' => isset( $_SERVER["DB1_USER"] ) ? $_SERVER["DB1_USER"] : '',
+            'password' => isset( $_SERVER["DB1_PASS"] ) ? $_SERVER["DB1_PASS"] : '',
+            'port'     => isset( $_SERVER["DB1_PORT"] ) ? $_SERVER["DB1_PORT"] : '',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
@@ -113,11 +114,17 @@ return array(
 
 		'cluster' => false,
 
-		'default' => array(
+		'cache' => array(
 			'host'     => '127.0.0.1',
 			'port'     => 6379,
 			'database' => 0,
 		),
+		
+        'sessions' => array(
+            'host'     => '127.0.0.1',
+            'port'     => 6379,
+            'database' => 1,
+        ),
 
 	),
 

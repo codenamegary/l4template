@@ -1,0 +1,73 @@
+db1:
+  name: app-db
+  type: mysql
+  
+web1:
+  name: app-web
+  shared_writable_dirs:
+    - /app/storage/cache
+    - /app/storage/logs
+    - /app/storage/meta
+    - /app/storage/sessions
+    - /app/storage/views
+  document_root: /public
+  php_version: 5.4.14
+  php_extensions:
+    - geoip
+    - mbstring
+    - pdo_mysql
+    - mcrypt
+    - gd
+    - curl
+    - zip
+    - xcache
+    - redis
+    - imagick
+  php_upload_max_filesize: "8M"
+  php_post_max_size: "8M"
+  before_deploy:
+    - "php artisan migrate"
+  after_deploy:
+    - "rm -f app/storage/cache/*"
+    - "rm -f app/storage/views/*"
+    - "php artisan cache:clear"
+  after_build:
+    - "chmod +x deploy.sh"
+    - "./deploy.sh"
+
+worker1:
+  name: app-queue
+  shared_writable_dirs:
+    - /app/storage/cache
+    - /app/storage/logs
+    - /app/storage/meta
+    - /app/storage/sessions
+    - /app/storage/views
+  php_version: 5.4.14
+  php_extensions:
+    - geoip
+    - mbstring
+    - pdo_mysql
+    - mcrypt
+    - gd
+    - curl
+    - zip
+    - xcache
+    - redis
+    - imagick
+    - ftp
+  type: php
+  exec: "php artisan queue:listen"
+  before_deploy:
+    - "php artisan migrate"
+  after_deploy:
+    - "rm -f app/storage/cache/*"
+    - "rm -f app/storage/views/*"
+    - "php artisan cache:clear"
+  after_build:
+    - "chmod +x deploy.sh"
+    - "./deploy.sh"
+    
+cache1:
+  name: app-cache
+  type: redis
