@@ -21,7 +21,7 @@ Backbone.js is included by default. Some placeholder directories are located in 
 
 ## Setup Instructions
 
-    composer create project codenamegary/l4template
+    composer create-project codenamegary/l4template
     
     npm install
     
