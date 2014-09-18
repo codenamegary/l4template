@@ -21,15 +21,45 @@ Backbone.js is included by default. Some placeholder directories are located in 
 
 ## Setup Instructions
 
+#### Create a new directory and install the template
+
     composer create-project codenamegary/l4template
     
+#### Setup your environment detection
+
+[Laravel Environment Configuration Docs](http://laravel.com/docs/configuration#environment-configuration)
+
+- Set a "LARAVEL_ENV" environment variable **OR**
+- Update /bootstrap/start.php to detect your environment some other way
+
+For convenience, the template is preconfigured to look for an environment variable called "LARAVEL_ENV". For expediency, you can create this variable and the template will use it.
+
+#### Configure your connections and components
+
+[Laravel Database Config Docs](http://laravel.com/docs/database#configuration)
+
+[Laravel Auth Config Docs](http://laravel.com/docs/security#configuration)
+
+[Other Laravel Docs](http://laravel.com/docs)    
+
+#### Run base migrations
+
+    php artisan migrate
+
+#### Install node and other JS / Less modules
+
     npm install
-    
     bower install
     
-#### Compiling Assets
+#### Compiling assets
 
-You can compile the less (css) and JavaScripts using Grunt by running "grunt dist" at any time from the project root directory. The watch plugin is also included, if you'd like Grunt to execute and compile your less and scripts as you go just run "grunt watch".
+You can compile the less (css) and JavaScripts using Grunt by running "grunt dist" at any time from the project root directory.
+
+	grunt dist
+
+The watch plugin is also included, if you'd like Grunt to execute and compile your less and scripts as you go just run "grunt watch".
+
+    grunt watch
 
 ## Deploying
 

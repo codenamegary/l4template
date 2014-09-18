@@ -474,14 +474,34 @@ function setDocumentScrollTop(ypos)
 <h4> <a name="javascripts" class="anchor" href="#javascripts" aria-hidden="true"><span class="octicon octicon-link"></span></a>JavaScripts</h4> 
 <p>Backbone.js is included by default. Some placeholder directories are located in /assets/js for your models, views and other services. These are compiled into app.js by Grunt, out of the box. Just place your scripts here and watch them go!</p> 
 <h2> <a name="setup-instructions" class="anchor" href="#setup-instructions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Setup Instructions</h2> 
+<h4> <a name="create-a-new-directory-and-install-the-template" class="anchor" href="#create-a-new-directory-and-install-the-template" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create a new directory and install the template</h4> 
 <pre><code>composer create-project codenamegary/l4template
-
-npm install
-
+</code></pre> 
+<h4> <a name="setup-your-environment-detection" class="anchor" href="#setup-your-environment-detection" aria-hidden="true"><span class="octicon octicon-link"></span></a>Setup your environment detection</h4> 
+<p><a href="http://laravel.com/docs/configuration#environment-configuration">Laravel Environment Configuration Docs</a></p> 
+<ul> 
+ <li>Set a &quot;LARAVEL_ENV&quot; environment variable <strong>OR</strong> </li> 
+ <li>Update /bootstrap/start.php to detect your environment some other way</li> 
+</ul>
+<p>For convenience, the template is preconfigured to look for an environment variable called &quot;LARAVEL_ENV&quot;. For expediency, you can create this variable and the template will use it.</p> 
+<h4> <a name="configure-your-connections-and-components" class="anchor" href="#configure-your-connections-and-components" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configure your connections and components</h4> 
+<p><a href="http://laravel.com/docs/database#configuration">Laravel Database Config Docs</a></p> 
+<p><a href="http://laravel.com/docs/security#configuration">Laravel Auth Config Docs</a></p> 
+<p><a href="http://laravel.com/docs">Other Laravel Docs</a> </p> 
+<h4> <a name="run-base-migrations" class="anchor" href="#run-base-migrations" aria-hidden="true"><span class="octicon octicon-link"></span></a>Run base migrations</h4> 
+<pre><code>php artisan migrate
+</code></pre> 
+<h4> <a name="install-node-and-other-js--less-modules" class="anchor" href="#install-node-and-other-js--less-modules" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install node and other JS / Less modules</h4> 
+<pre><code>npm install
 bower install
 </code></pre> 
-<h4> <a name="compiling-assets" class="anchor" href="#compiling-assets" aria-hidden="true"><span class="octicon octicon-link"></span></a>Compiling Assets</h4> 
-<p>You can compile the less (css) and JavaScripts using Grunt by running &quot;grunt dist&quot; at any time from the project root directory. The watch plugin is also included, if you'd like Grunt to execute and compile your less and scripts as you go just run &quot;grunt watch&quot;.</p> 
+<h4> <a name="compiling-assets" class="anchor" href="#compiling-assets" aria-hidden="true"><span class="octicon octicon-link"></span></a>Compiling assets</h4> 
+<p>You can compile the less (css) and JavaScripts using Grunt by running &quot;grunt dist&quot; at any time from the project root directory.</p> 
+<pre><code>grunt dist
+</code></pre> 
+<p>The watch plugin is also included, if you'd like Grunt to execute and compile your less and scripts as you go just run &quot;grunt watch&quot;.</p> 
+<pre><code>grunt watch
+</code></pre> 
 <h2> <a name="deploying" class="anchor" href="#deploying" aria-hidden="true"><span class="octicon octicon-link"></span></a>Deploying</h2> 
 <p>Setup an account at <a href="http://www.pagodabox.com">PagodaBox</a> and push your code there.</p>
 </body>
