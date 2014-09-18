@@ -1,6 +1,6 @@
 {
-	"name": "laravel/laravel",
-	"description": "The Laravel Framework.",
+	"name": "codenamegary/l4template",
+	"description": "A Laravel application template with lots of workflow tools preconfigured.",
 	"keywords": ["framework", "laravel"],
 	"license": "MIT",
 	"require": {
