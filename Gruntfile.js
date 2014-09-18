@@ -37,6 +37,10 @@ module.exports = function (grunt) {
       },
       app: {
         src: [
+          'bower_components/backbone/backbone.js',
+          'assets/js/models/**/*.js',
+          'assets/js/services/**/*.js',
+          'assets/js/views/**/*.js',
           'assets/js/app.js'
         ],
         dest: 'public/js/app.js'
@@ -67,7 +71,7 @@ module.exports = function (grunt) {
           sourceMapFilename: 'public/css/bootstrap.css.map'
         },
         files: {
-          'public/css/bootstrap.css': 'bower_components/bootstrap/less/bootstrap.less'
+          'public/css/bootstrap.css': 'assets/less/bootstrap.less'
         }
       },
       compileApp: {
@@ -116,6 +120,10 @@ module.exports = function (grunt) {
       less: {
         files: 'assets/less/**/*.less',
         tasks: 'less'
+      },
+      js: {
+      	files: 'assets/js/**/*.js',
+      	tasks: ['concat', 'uglify']
       }
     }
 
