@@ -1,6 +1,10 @@
 db1:
   name: app-db
   type: mysql
+
+cache1:
+  name: app-cache
+  type: redis
   
 web1:
   name: app-web
@@ -68,6 +72,3 @@ worker1:
     - "chmod +x deploy.sh"
     - "./deploy.sh"
     
-cache1:
-  name: app-cache
-  type: redis
